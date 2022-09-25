@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  firstLambda
+
+  Sample SAM Template for firstLambda
+
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: hello_world/
+      Handler: datatypes.cold_start_basics
+      Runtime: python3.9
+      Timeout: 7
+      Environment:
+        Variables:
+          restapiurl: http://dummyurl
+          dbname: mydb
+      Architectures:
+        - x86_64
